@@ -1,0 +1,9 @@
+<div>
+  <div>
+    <a [routerLink]="['/dashboard']">Back</a>
+  </div>
+  <div *ngIf="hero">
+    {{hero.name}}
+    <a [routerLink]="['/crafting', heroId]">Crafting</a>
+  </div>
+</div>

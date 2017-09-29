@@ -1,0 +1,15 @@
+<div *ngFor="let inventory of inventories | async">
+  <p>Ressources:</p>
+  <div *ngFor="let res of inventory.stock" class="res">
+    <span>{{res.name}}</span>
+    <span>{{res.amount}}x</span>
+  </div>
+  <hr>
+  <p>Items:</p>
+  <div *ngFor="let item of inventory.items" class="inv">
+    <span>{{item.name}}</span>
+    <span>{{item.cat}}</span>
+  </div>
+  
+  <!-- <div [innerHTML]="printTree(inv.item)"></div> -->
+</div>

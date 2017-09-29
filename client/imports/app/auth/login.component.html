@@ -1,0 +1,24 @@
+<div>
+  <div>
+    Sign in
+  </div>
+  <div>
+    <div>
+      <p>Sign in with your email</p>
+    </div>
+    <form [formGroup]="loginForm" #f="ngForm" (ngSubmit)="login()">
+      <input formControlName="email" type="email" placholder="EMail"></input>
+      <input formControlName="password" type="password" placeholder="Password"></input>
+      <div>
+        <a [routerLink]="['/recover']">Forgot password?</a>
+        <button type="submit">Sign In</button>
+      </div>
+    </form>
+    <div [hidden]="error == ''">
+      <p>{{ error }}</p>
+    </div>
+    <div>
+      <a [routerLink]="['/signup']">Need an account?</a>
+    </div>
+  </div>
+</div>

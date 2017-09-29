@@ -1,0 +1,42 @@
+<md-toolbar color="primary">
+  <h1>{{title}}</h1>
+  <div *ngIf="!user">
+    <a [routerLink]="['/login']">Login</a>
+    <a [routerLink]="['/signup']">Sign up</a>
+  </div>
+  <span flex> </span>
+  <div *ngIf="user">
+    <button (click)="logout()">
+      <md-icon>exit_to_app</md-icon>
+      Logout
+    </button>
+  </div>
+</md-toolbar>
+<router-outlet></router-outlet>
+<div *ngIf="!user">
+  <p>Please login!</p>
+</div>
+<hr>
+<footer>
+  <div *ngIf="user">
+    <my-inventory></my-inventory>
+  </div>
+</footer>
+<!--
+<div style="clear: both;">
+  <div style="width: 33.33%; float: left;">
+    <my-dashboard>Loading Dashboard...</my-dashboard>
+  </div>
+  <div style="width: 66.66%; float: left;">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+<div style="width: 100%; clear: both;">
+  <div style="width: 33.33%; background-color: lightgrey; float: left;">
+    <my-inventory>Loading Inventory...<my-inventory>
+  </div>
+  <div style="width: 66.66%; background-color: lightgrey; float: right;">
+    <my-info></my-info>
+  </div>
+</div>
+-->

@@ -1,0 +1,16 @@
+{
+  "uploadOnSave": true,
+  "useAtomicWrites": false,
+  "deleteLocal": false,
+  "hostname": "217.7.82.107",
+  "port": "22",
+  "target": "/var/www/schmidf/meteor/rpg",
+  "ignore": [
+    ".remote-sync.json",
+    ".git/**"
+  ],
+  "username": "root",
+  "keyfile": "Z:\\.ssh\\id_rsa",
+  "watch": [],
+  "transport": "scp"
+}

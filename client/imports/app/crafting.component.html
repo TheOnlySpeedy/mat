@@ -1,0 +1,24 @@
+<div>
+  <div>
+    <a [routerLink]="['/detail', heroId]">Back</a>
+  </div>
+  <div *ngFor="let hero of heroes | async">
+    <div *ngIf="hero">
+      {{hero.name}}
+      <div *ngIf="hero.work.desc">
+        <p>currently working on {{hero.work.desc}}</p>
+      </div>
+      <div *ngIf="blueprint && !hero.work.desc" style="clear: both; overflow: auto">
+        <select [(ngModel)]="selectedItem">
+          <option *ngFor="let item of blueprintItems" [ngValue]="item">{{item.name}}</option>
+        </select>
+        <div *ngIf="selectedItem">
+          <p>Description</p>
+          <p>{{selectedItem.name}}</p>
+          <p><em>Level:</em>{{selectedItem.level}}</p>
+          <button *ngIf="!hero.work.desc" (click)="craftItem()">craft Item</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
